@@ -1,0 +1,15 @@
+.bottom-signup { margin-top: 64px; text-align: center; }
+.bottom-signup h2 { font-size: 1.5rem; margin-bottom: 12px; }
+.bottom-signup .signup-form { max-width: 790px; }
+.site-footer { padding-top: 65px; padding-bottom: 50px; color: var(--color-muted); }
+.footer-question { margin-bottom: 30px; font-size: 1rem; }
+.footer-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 17px 20px; list-style: none; font-size: .875rem; line-height: 1.45; margin-bottom: 32px; }
+.footer-grid a { overflow-wrap: anywhere; }
+.footer-grid a:hover { color: #fff; }
+.site-footer .language-picker select { width: 156px; color: #fff; padding-left: 36px; min-height: 38px; }
+.site-footer .language-icon { top: 10px; }.site-footer .language-chevron { top: 12px; }
+.footer-country { margin-top: 28px; margin-bottom: 28px; font-size: .875rem; }
+.study-notice { max-width: 82ch; border-top: 1px solid #353535; padding-top: 20px; color: #a9a9b0; font-size: .8125rem; line-height: 1.65; }
+.study-notice strong { display: block; margin-bottom: 8px; color: #c9c9cf; }
+.study-notice p + p { margin-top: 10px; }
+@media (min-width: 768px) { .footer-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px 30px; }.site-footer { padding-top: 75px; } }

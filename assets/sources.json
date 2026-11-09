@@ -1,0 +1,79 @@
+{
+  "reference": "https://www.netflix.com/br/",
+  "consulted": "2026-11-09",
+  "hero": "https://assets.nflxext.com/ffe/siteui/vlv3/d8132cba-0024-4b01-86f4-2bac9792e1dd/web/BR-pt-20261102-TRIFECTA-perspective_2a4e6ee0-0778-4fa2-a629-0c0d988d85bb_large.jpg",
+  "logo": "https://occ.a.nflxso.net/dnmt/api/v6/iL4oJVDYZ8KLSrJ6eG2OwtghbfQ/AAAAAchJje9GUBJ_ehbO0uOApH8QmRyuvK0LQI9obzFeGtfkpfLyh4FdolMZR4PtvyNoOomDcY7BzTbhFC3gJinH0UadYBg807AKDSPyfsUDm9T3CZKn9OSZN3II7060MZESFcb6YOS9jvzh.svg",
+  "posters": [
+    {
+      "file": "trending-01.webp",
+      "title": "Minha Melhor Amiga",
+      "url": "https://occ-0-4694-3852.1.nflxso.net/dnm/api/v6/_YyUT33Ze3kFXjMydIZFIm6ajHk/AAAABdssX5GrNN_p_Q1db3Tuzuj7UlTJEYLETknRBw8xrIQdk6toXiTZuclEUSJndSRxQjwigq35McKNEvyNDATF2fNElbqefkszTnE.jpg",
+      "width": 197,
+      "height": 276
+    },
+    {
+      "file": "trending-02.webp",
+      "title": "Lupin",
+      "url": "https://occ-0-4694-3852.1.nflxso.net/dnm/api/v6/_YyUT33Ze3kFXjMydIZFIm6ajHk/AAAABTfuxVI0H9WVSv_KtBBXArcJ8gyUC8Gajw9b1D2MMsYdksS5N4vP693G4iludbm2n363hTTK1LX4-8Jsto5W_p1dNyMldcwtGPp3Fqek2Hs3psI5hk2A6g-XzHk0HHsWu-ll.jpg",
+      "width": 197,
+      "height": 276
+    },
+    {
+      "file": "trending-03.webp",
+      "title": "Meu Nome é Farah",
+      "url": "https://occ-0-4694-3852.1.nflxso.net/dnm/api/v6/_YyUT33Ze3kFXjMydIZFIm6ajHk/AAAABStSsa6uZg76zn_8qDbuNcRRLFmZaPE6M78_lfbxDdx0jp98KbiDsxZF5fIpk0CZi64Y5BYYi2BOZvVskcAdrhVAr1HNMUWJIl8.jpg",
+      "width": 197,
+      "height": 276
+    },
+    {
+      "file": "trending-04.webp",
+      "title": "O Mentalista",
+      "url": "https://occ-0-4694-3852.1.nflxso.net/dnm/api/v6/_YyUT33Ze3kFXjMydIZFIm6ajHk/AAAABeCJMDr-bN9ohIHSKC4Sgb0WsMQ3lIksBbxpbhG1Tp8BWJCX587-afxUKODNAsY9jTUh182SbEGczjPJ-PyRZFAwunIQmoucKfE.jpg",
+      "width": 197,
+      "height": 276
+    },
+    {
+      "file": "trending-05.webp",
+      "title": "One Piece",
+      "url": "https://occ-0-4694-3852.1.nflxso.net/dnm/api/v6/_YyUT33Ze3kFXjMydIZFIm6ajHk/AAAABfWoVfI_JU_AABWzmfM5rnolhIST_q2dYNk3MD--s12aMKIiJ08PEFd7C5vYKRxJW1D3tn4wVcaMPBte1GcETtC9QVIjpyfWAeI.jpg",
+      "width": 197,
+      "height": 276
+    },
+    {
+      "file": "trending-06.webp",
+      "title": "Colisão Implacável",
+      "url": "https://occ-0-4694-3852.1.nflxso.net/dnm/api/v6/_YyUT33Ze3kFXjMydIZFIm6ajHk/AAAABbYCwgBnuudnoaWtUwmbLsYXf8a_eb-BARYc7yVAGXHgmM62DhZEW5zvKaSJ3LglbNWLuIHOZKgXWbrCjuRk8kQ-FiMwk9ssX8r6zDvP5FysOKhs3EIk0olzHkqWl4oMrkvJ.jpg",
+      "width": 197,
+      "height": 276
+    },
+    {
+      "file": "trending-07.webp",
+      "title": "Dom de Iludir",
+      "url": "https://occ-0-4694-3852.1.nflxso.net/dnm/api/v6/_YyUT33Ze3kFXjMydIZFIm6ajHk/AAAABRDbgg0e84LbazAX1fM1zYScvTYIQpQl-GcobDPb6YGVzimlXL2PdSxT0toxFjqgerk7lFLxKz9_dT-RhzN_O5fVAkFYJNmDbCO7UvwLhKLzr-ELnbJp3OTj_ALLFJSLxNRm.jpg",
+      "width": 197,
+      "height": 276
+    },
+    {
+      "file": "trending-08.webp",
+      "title": "Sol da Minha Vida",
+      "url": "https://occ-0-4694-3852.1.nflxso.net/dnm/api/v6/_YyUT33Ze3kFXjMydIZFIm6ajHk/AAAABXouYWyjS2FIQf9_JHCLJolXgHwFn44WY5LxgsY4nxovlSuZIQ8PiyIMh07LSBNwsG8YHvHGxx59YOYbXgFpDUExM7C_7BXsV7M.jpg",
+      "width": 197,
+      "height": 276
+    },
+    {
+      "file": "trending-09.webp",
+      "title": "A Era do Gelo: O Big Bang",
+      "url": "https://occ-0-4694-3852.1.nflxso.net/dnm/api/v6/_YyUT33Ze3kFXjMydIZFIm6ajHk/AAAABY_pCMPDmyprmaq9jlqOKFt3uI2Is_BfBAdLIEjGanlA7H09VDtG9PVkoyCHZ0Mzlv5_v4pJ4SnKbFB3dRAsBJHxgxNN-qY8sVM.jpg",
+      "width": 197,
+      "height": 276
+    },
+    {
+      "file": "trending-10.webp",
+      "title": "Todo Mundo Odeia o Chris",
+      "url": "https://occ-0-4694-3852.1.nflxso.net/dnm/api/v6/_YyUT33Ze3kFXjMydIZFIm6ajHk/AAAABd0w0o0Uo8JiFrcunyuTKWJ5VLoo8w5e7HHqgGA6se1G_bQXkJWEACDMiRYeRi0u5GGjh0A_9pFwhJf_WUd1EDtpxdfSHNyt26k.jpg",
+      "width": 197,
+      "height": 276
+    }
+  ],
+  "note": "Assets da página oficial, usados neste exercício de interface; marcas e obras pertencem aos respectivos titulares. Ranking é retrato da consulta, não feed em tempo real."
+}

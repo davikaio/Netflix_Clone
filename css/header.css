@@ -1,0 +1,19 @@
+/* O header sai do fluxo para aparecer sobre a imagem, sem deslocar o hero. */
+.site-header { position: absolute; inset: 0 0 auto; z-index: 5; }
+.header-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 24px; }
+.brand { display: inline-block; flex-shrink: 0; }
+.brand img { width: 90px; height: auto; }
+.header-actions { display: flex; align-items: center; gap: 9px; }
+.signin-link { min-height: 33px; padding: 8px 15px; font-size: var(--font-size-small); }
+/* O ícone não intercepta cliques: todo o retângulo continua pertencendo ao select. */
+.language-picker { position: relative; display: inline-block; }
+.language-picker select { appearance: none; color: transparent; background: rgb(12 12 12 / 75%); border: 1px solid #8e8e8e; border-radius: var(--radius-control); width: 58px; min-height: 34px; padding: 6px 25px 6px 29px; font-size: var(--font-size-small); }
+.language-picker option { color: #fff; background: #161616; }
+.language-icon { position: absolute; left: 10px; top: 8px; width: 17px; height: 17px; pointer-events: none; }
+.language-chevron { position: absolute; right: 5px; top: 10px; width: 14px; height: 14px; pointer-events: none; }
+@media (min-width: 600px) {
+  .brand img { width: 120px; }
+  .header-actions { gap: 16px; }
+  .language-picker select { width: 144px; color: #fff; padding-left: 36px; }
+}
+@media (min-width: 1024px) { .brand img { width: 148px; }.header-inner { padding-block: 28px; } }

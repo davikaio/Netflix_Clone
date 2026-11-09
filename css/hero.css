@@ -1,0 +1,55 @@
+/*
+ * Camadas do hero: imagem no fundo, dois gradientes acima e conteúdo na frente.
+ * isolation cria um contexto de empilhamento local; o header tem seu próprio z-index.
+ */
+.hero { position: relative; isolation: isolate; overflow: hidden; min-height: 660px; padding: 132px 0 105px; text-align: center; }
+.hero-background, .hero-background img { position: absolute; inset: 0; width: 100%; height: 100%; }
+.hero-background { z-index: -3; }
+.hero-background img { object-fit: cover; object-position: center; }
+.hero::before { content: ''; position: absolute; inset: 0; z-index: -2; background: linear-gradient(180deg, rgb(0 0 0 / 78%) 0%, rgb(0 0 0 / 65%) 45%, rgb(0 0 0 / 93%) 100%), linear-gradient(90deg, rgb(0 0 0 / 35%), transparent 50%, rgb(0 0 0 / 35%)); }
+.hero-content { max-width: 740px; position: relative; z-index: 1; }
+.hero h1 { max-width: 700px; margin-inline: auto; font-size: 2rem; line-height: 1.18; letter-spacing: -.025em; font-weight: 900; }
+.hero-price { margin-top: 20px; margin-bottom: 25px; font-weight: 600; font-size: 1rem; }
+.signup-prompt { margin-inline: auto; max-width: 640px; font-size: 1rem; line-height: 1.5; }
+/* Flex começa empilhado; no desktop o campo cede espaço ao botão sem largura fixa. */
+.signup-form { display: flex; flex-direction: column; align-items: stretch; gap: 16px; max-width: 640px; margin: 18px auto 0; }
+.email-field { position: relative; flex: 1; min-width: 0; text-align: left; }
+.email-field input { display: block; width: 100%; min-height: 56px; padding: 23px 16px 8px; background: var(--color-input); color: #fff; border: 1px solid var(--color-input-border); border-radius: var(--radius-control); font-size: 1rem; }
+.email-field label { position: absolute; left: 17px; top: 16px; color: #d1d1d5; font-size: 1rem; transform-origin: top left; pointer-events: none; transition: transform .14s, top .14s; }
+/* placeholder=' ' permite detectar campo vazio. O label segue presente e associado. */
+.email-field input:focus + label, .email-field input:not(:placeholder-shown) + label { top: 8px; transform: scale(.75); }
+.email-field input[aria-invalid='true'] { border-color: var(--color-error); border-bottom-width: 2px; }
+.email-field input.is-valid { border-color: var(--color-success); }
+.field-error { display: block; margin-top: 6px; font-size: var(--font-size-small); color: var(--color-error); line-height: 1.4; }
+.field-error:empty { display: none; }
+.signup-submit { min-height: 52px; align-self: center; padding-inline: 24px; font-size: 1.25rem; white-space: nowrap; }
+.form-feedback { flex: 0 0 100%; color: var(--color-success); font-size: var(--font-size-small); margin: 0; line-height: 1.5; }
+.form-feedback:empty { display: none; }
+.form-feedback.is-error { color: var(--color-error); }
+.demo-note { color: #c7c7cc; font-size: .75rem; margin-top: 16px; }
+/* A curva é decorativa e fica restrita ao hero, sem criar rolagem lateral na página. */
+.hero-curve { position: absolute; width: 160%; left: -30%; height: 90px; bottom: -63px; border-radius: 50% 50% 0 0; border-top: 4px solid #e50935; background: radial-gradient(ellipse at 50% 0, #182647, #000 65%); z-index: 0; }
+.main-sections { position: relative; }
+.plan-banner { display: grid; grid-template-columns: 1fr; align-items: center; gap: 16px; padding: 24px; margin-top: 10px; border-radius: 14px; background: linear-gradient(100deg, #231c45, #27182c); }
+.plan-symbol { display: none; font-size: 56px; font-weight: 900; color: #ff3c65; line-height: 1; }
+.plan-banner h2 { font-size: 1.125rem; line-height: 1.35; margin-bottom: 6px; }
+.plan-banner p { color: #d0cdd8; font-size: .875rem; }
+.button-plan { justify-self: start; background: #51465d; color: #fff; font-size: .875rem; min-height: 40px; }
+.button-plan:hover { background: #675a74; }
+@media (min-width: 600px) {
+  .hero { padding-top: 155px; min-height: 680px; }
+  .hero h1 { font-size: 2.65rem; }
+  .hero-price { font-size: 1.125rem; }
+  .signup-form { flex-direction: row; flex-wrap: wrap; gap: 8px; }
+  .signup-submit { min-height: 56px; align-self: start; font-size: 1.375rem; }
+  .plan-banner { grid-template-columns: 1fr auto; padding: 25px 32px; }
+  .button-plan { justify-self: end; }
+}
+@media (min-width: 1024px) {
+  .hero { min-height: 740px; padding-top: 190px; padding-bottom: 120px; }
+  .hero h1 { font-size: 3.5rem; line-height: 1.12; }
+  .hero-price { font-size: 1.25rem; margin-bottom: 28px; }
+  .plan-banner { grid-template-columns: 52px 1fr auto; gap: 25px; padding: 23px 32px; }
+  .plan-symbol { display: block; }
+  .plan-banner h2 { font-size: 1.25rem; }
+}

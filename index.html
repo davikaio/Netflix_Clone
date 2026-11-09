@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Clone educacional da landing page da Netflix Brasil, construído com HTML, CSS e JavaScript puros. Sem cadastro, pagamento ou envio de e-mail.">
+  <meta name="theme-color" content="#000000">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Netflix Brasil — Clone de estudo Front-End</title>
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="preload" as="image" type="image/webp" href="assets/images/hero-1280.webp" imagesrcset="assets/images/hero-768.webp 768w, assets/images/hero-1280.webp 1280w, assets/images/hero-1920.webp 1920w" imagesizes="100vw">
+  <!-- A ordem importa: tokens, regras comuns e, por último, cada componente. -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/hero.css">
+  <link rel="stylesheet" href="css/trending.css">
+  <link rel="stylesheet" href="css/reasons.css">
+  <link rel="stylesheet" href="css/faq.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <!-- defer baixa sem bloquear a leitura do HTML e executa depois do DOM pronto. -->
+  <script src="js/faq.js" defer></script>
+  <script src="js/trending.js" defer></script>
+  <script src="js/form.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <!-- Ícones vetoriais originais reutilizados; nenhum pacote de ícones é necessário. -->
+  <svg class="svg-defs" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs><linearGradient id="reason-gradient" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffdae9"/><stop offset=".55" stop-color="#f65191"/><stop offset="1" stop-color="#8b1abb"/></linearGradient></defs>
+    <symbol id="icon-chevron" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></symbol>
+    <symbol id="icon-down" viewBox="0 0 24 24"><path d="m7 10 5 5 5-5"/></symbol>
+    <symbol id="icon-language" viewBox="0 0 24 24"><path d="M3 5h12M9 3v2m3 0c0 6-4 10-8 12m1-9c1 4 4 7 8 9m1 4 4-11 4 11m-6-4h5"/></symbol>
+    <symbol id="icon-tv" viewBox="0 0 72 72"><rect x="8" y="12" width="56" height="38" rx="5"/><path d="M25 61h22M36 50v11M17 21h38v20H17z"/></symbol>
+    <symbol id="icon-download" viewBox="0 0 72 72"><circle cx="36" cy="36" r="27"/><path d="M36 18v31m-12-12 12 12 12-12"/></symbol>
+    <symbol id="icon-watch" viewBox="0 0 72 72"><path d="m14 35 8-18 35 14-8 18-35-14Zm12-16 8-9 24 10-1 11M23 40l-7 14m20-9 3 17m9-14 12 9"/><circle cx="18" cy="27" r="5"/></symbol>
+    <symbol id="icon-kids" viewBox="0 0 72 72"><rect x="8" y="22" width="36" height="37" rx="5"/><rect x="29" y="10" width="35" height="37" rx="5"/><path d="M37 22h1m17 0h1M39 34c4 4 9 4 13 0M16 36h1m16 0h1M18 48c4 4 8 4 12 0"/></symbol>
+  </svg>
+
+  <header class="site-header"><div class="container header-inner"><a class="brand" href="#inicio"><img src="assets/icons/netflix-logo.svg" width="148" height="40" alt="Netflix — início"></a><div class="header-actions"><label class="language-picker" for="header-language"><span class="sr-only">Idioma da página</span><svg class="icon language-icon" aria-hidden="true"><use href="#icon-language"/></svg><select id="header-language" aria-label="Idioma da página"><option value="pt-BR">Português</option></select><svg class="icon language-chevron" aria-hidden="true"><use href="#icon-down"/></svg></label><a class="button button-red signin-link" href="https://www.netflix.com/br/login" target="_blank" rel="noopener noreferrer">Entrar</a></div></div></header>
+
+  <main id="conteudo">
+    <!-- A imagem absoluta não dita a altura; texto e formulários definem o fluxo. -->
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <picture class="hero-background"><source type="image/webp" srcset="assets/images/hero-768.webp 768w, assets/images/hero-1280.webp 1280w, assets/images/hero-1920.webp 1920w" sizes="100vw"><img src="assets/images/hero-1920.jpg" width="1920" height="1080" alt="" fetchpriority="high" decoding="async"></picture>
+      <div class="container hero-content"><h1 id="hero-title">Filmes, séries e muito mais, sem limites</h1><p class="hero-price">Planos a partir de R$&nbsp;25,90 por mês.</p><p class="signup-prompt">Seu próximo filme começa aqui. Informe seu e-mail para experimentar o formulário.</p><form class="signup-form" data-email-form aria-label="Validar e-mail nesta demonstração">
+          <div class="email-field"><input id="hero-email" name="email" type="email" inputmode="email" autocomplete="email" maxlength="254" placeholder=" " required aria-describedby="hero-error"><label for="hero-email">E-mail</label><span class="field-error" id="hero-error"></span></div>
+          <button class="button button-red signup-submit" type="submit" disabled>Vamos lá <svg class="icon" aria-hidden="true"><use href="#icon-chevron"/></svg></button>
+          <p class="form-feedback" id="hero-feedback" role="status" aria-live="polite"></p>
+        </form><p class="demo-note">Projeto de estudo: seu e-mail não é enviado nem armazenado.</p><noscript><p class="demo-note">Ative o JavaScript para testar a validação. O restante da página continua disponível.</p></noscript></div>
+      <div class="hero-curve" aria-hidden="true"></div>
+    </section>
+
+    <div class="container main-sections">
+      <!-- Esta faixa pertence ao hero visualmente; o link abre o serviço oficial. -->
+      <aside class="plan-banner" aria-label="Plano com anúncios"><span class="plan-symbol" aria-hidden="true">N</span><div><h2>Uma opção para começar por R$&nbsp;25,90.</h2><p>Conheça o plano com anúncios no site oficial.</p></div><a class="button button-plan" href="https://www.netflix.com/br/" target="_blank" rel="noopener noreferrer">Saiba mais</a></aside>
+
+      <section class="content-section trending-section" aria-labelledby="trending-title"><h2 class="section-title" id="trending-title">Em alta</h2><div class="trending-shell"><button class="trending-arrow trending-prev" type="button" aria-label="Títulos anteriores" aria-controls="trending-list" hidden><svg class="icon" aria-hidden="true"><use href="#icon-chevron"/></svg></button><ol class="trending-list" id="trending-list" tabindex="0" aria-label="Dez títulos da referência consultada. Use as setas do teclado para rolar.">
+          <li class="trending-item">
+            <span class="ranking" aria-hidden="true">1</span>
+            <img src="assets/images/trending-01.webp" width="197" height="276" alt="Minha Melhor Amiga" loading="lazy" decoding="async">
+          </li>
+          <li class="trending-item">
+            <span class="ranking" aria-hidden="true">2</span>
+            <img src="assets/images/trending-02.webp" width="197" height="276" alt="Lupin" loading="lazy" decoding="async">
+          </li>
+          <li class="trending-item">
+            <span class="ranking" aria-hidden="true">3</span>
+            <img src="assets/images/trending-03.webp" width="197" height="276" alt="Meu Nome é Farah" loading="lazy" decoding="async">
+          </li>
+          <li class="trending-item">
+            <span class="ranking" aria-hidden="true">4</span>
+            <img src="assets/images/trending-04.webp" width="197" height="276" alt="O Mentalista" loading="lazy" decoding="async">
+          </li>
+          <li class="trending-item">
+            <span class="ranking" aria-hidden="true">5</span>
+            <img src="assets/images/trending-05.webp" width="197" height="276" alt="One Piece" loading="lazy" decoding="async">
+          </li>
+          <li class="trending-item">
+            <span class="ranking" aria-hidden="true">6</span>
+            <img src="assets/images/trending-06.webp" width="197" height="276" alt="Colisão Implacável" loading="lazy" decoding="async">
+          </li>
+          <li class="trending-item">
+            <span class="ranking" aria-hidden="true">7</span>
+            <img src="assets/images/trending-07.webp" width="197" height="276" alt="Dom de Iludir" loading="lazy" decoding="async">
+          </li>
+          <li class="trending-item">
+            <span class="ranking" aria-hidden="true">8</span>
+            <img src="assets/images/trending-08.webp" width="197" height="276" alt="Sol da Minha Vida" loading="lazy" decoding="async">
+          </li>
+          <li class="trending-item">
+            <span class="ranking" aria-hidden="true">9</span>
+            <img src="assets/images/trending-09.webp" width="197" height="276" alt="A Era do Gelo: O Big Bang" loading="lazy" decoding="async">
+          </li>
+          <li class="trending-item">
+            <span class="ranking" aria-hidden="true">10</span>
+            <img src="assets/images/trending-10.webp" width="197" height="276" alt="Todo Mundo Odeia o Chris" loading="lazy" decoding="async">
+          </li>
+        </ol><button class="trending-arrow trending-next" type="button" aria-label="Próximos títulos" aria-controls="trending-list" hidden><svg class="icon" aria-hidden="true"><use href="#icon-chevron"/></svg></button></div><p class="sr-only" id="trending-status" role="status" aria-live="polite"></p></section>
+
+      <section class="content-section reasons-section" aria-labelledby="reasons-title"><h2 class="section-title" id="reasons-title">Mais motivos para assinar</h2><div class="reasons-grid">
+        <article class="reason-card"><h3>Uma tela maior</h3><p>Assista em TVs e outros aparelhos compatíveis.</p><svg class="reason-icon" aria-hidden="true"><use href="#icon-tv"/></svg></article>
+        <article class="reason-card"><h3>Histórias para levar</h3><p>Planos e aparelhos compatíveis permitem downloads para assistir offline.</p><svg class="reason-icon" aria-hidden="true"><use href="#icon-download"/></svg></article>
+        <article class="reason-card"><h3>Do seu jeito</h3><p>Continue a experiência em computadores, celulares ou tablets.</p><svg class="reason-icon" aria-hidden="true"><use href="#icon-watch"/></svg></article>
+        <article class="reason-card"><h3>Um espaço infantil</h3><p>Perfis para crianças com recursos de controle parental.</p><svg class="reason-icon" aria-hidden="true"><use href="#icon-kids"/></svg></article>
+      </div></section>
+
+      <!-- Sem JS, as respostas ficam abertas. O script habilita o acordeão. -->
+      <section class="content-section faq-section" id="faq" aria-labelledby="faq-title"><h2 class="section-title" id="faq-title">Perguntas frequentes</h2><div class="faq-list">
+        <article class="faq-item">
+          <h3><button class="faq-trigger" type="button" id="faq-question-1" aria-expanded="true" aria-controls="faq-answer-1" disabled><span>O que é a Netflix?</span><span class="faq-icon" aria-hidden="true"></span></button></h3>
+          <div class="faq-panel" id="faq-answer-1" role="region" aria-labelledby="faq-question-1"><div class="faq-answer"><div class="faq-answer-content"><p>Uma plataforma de streaming com filmes, séries e documentários para assistir pela internet.</p></div></div></div>
+        </article>
+        <article class="faq-item">
+          <h3><button class="faq-trigger" type="button" id="faq-question-2" aria-expanded="true" aria-controls="faq-answer-2" disabled><span>Como funciona a assinatura?</span><span class="faq-icon" aria-hidden="true"></span></button></h3>
+          <div class="faq-panel" id="faq-answer-2" role="region" aria-labelledby="faq-question-2"><div class="faq-answer"><div class="faq-answer-content"><p>Você escolhe um plano e paga uma mensalidade. Consulte preços e condições no site oficial.</p></div></div></div>
+        </article>
+        <article class="faq-item">
+          <h3><button class="faq-trigger" type="button" id="faq-question-3" aria-expanded="true" aria-controls="faq-answer-3" disabled><span>Em quais aparelhos posso assistir?</span><span class="faq-icon" aria-hidden="true"></span></button></h3>
+          <div class="faq-panel" id="faq-answer-3" role="region" aria-labelledby="faq-question-3"><div class="faq-answer"><div class="faq-answer-content"><p>O acesso está disponível em aparelhos compatíveis, como TVs, computadores, celulares e tablets.</p></div></div></div>
+        </article>
+        <article class="faq-item">
+          <h3><button class="faq-trigger" type="button" id="faq-question-4" aria-expanded="true" aria-controls="faq-answer-4" disabled><span>Posso cancelar quando quiser?</span><span class="faq-icon" aria-hidden="true"></span></button></h3>
+          <div class="faq-panel" id="faq-answer-4" role="region" aria-labelledby="faq-question-4"><div class="faq-answer"><div class="faq-answer-content"><p>O cancelamento pode ser solicitado na conta. As condições vigentes ficam disponíveis no serviço oficial.</p></div></div></div>
+        </article>
+        <article class="faq-item">
+          <h3><button class="faq-trigger" type="button" id="faq-question-5" aria-expanded="true" aria-controls="faq-answer-5" disabled><span>Quais títulos estão disponíveis?</span><span class="faq-icon" aria-hidden="true"></span></button></h3>
+          <div class="faq-panel" id="faq-answer-5" role="region" aria-labelledby="faq-question-5"><div class="faq-answer"><div class="faq-answer-content"><p>O catálogo inclui produções de diferentes gêneros e muda ao longo do tempo.</p></div></div></div>
+        </article>
+        <article class="faq-item">
+          <h3><button class="faq-trigger" type="button" id="faq-question-6" aria-expanded="true" aria-controls="faq-answer-6" disabled><span>Há uma experiência para crianças?</span><span class="faq-icon" aria-hidden="true"></span></button></h3>
+          <div class="faq-panel" id="faq-answer-6" role="region" aria-labelledby="faq-question-6"><div class="faq-answer"><div class="faq-answer-content"><p>Há perfis infantis e recursos de controle parental para responsáveis acompanharem o conteúdo.</p></div></div></div>
+        </article>
+      </div><noscript><p class="faq-note">Todas as respostas estão abertas porque o JavaScript está desativado.</p></noscript></section>
+
+      <section class="bottom-signup" aria-labelledby="bottom-signup-title"><h2 id="bottom-signup-title">Pronto para testar?</h2><p class="signup-prompt">Use um e-mail de exemplo. Esta página demonstra apenas a interface.</p><form class="signup-form" data-email-form aria-label="Validar e-mail nesta demonstração">
+          <div class="email-field"><input id="footer-email" name="email" type="email" inputmode="email" autocomplete="email" maxlength="254" placeholder=" " required aria-describedby="footer-error"><label for="footer-email">E-mail</label><span class="field-error" id="footer-error"></span></div>
+          <button class="button button-red signup-submit" type="submit" disabled>Vamos lá <svg class="icon" aria-hidden="true"><use href="#icon-chevron"/></svg></button>
+          <p class="form-feedback" id="footer-feedback" role="status" aria-live="polite"></p>
+        </form><p class="demo-note">Validação local, sem cadastro ou assinatura.</p></section>
+    </div>
+  </main>
+
+  <footer class="site-footer container"><p class="footer-question">Precisa de informações? <a href="https://help.netflix.com" target="_blank" rel="noopener noreferrer">Acesse a central oficial.</a></p><nav aria-label="Links de suporte e informações"><ul class="footer-grid">
+          <li><a href="#faq">Perguntas frequentes</a></li>
+          <li><a href="https://help.netflix.com" target="_blank" rel="noopener noreferrer">Central de ajuda</a></li>
+          <li><a href="https://www.netflix.com/youraccount" target="_blank" rel="noopener noreferrer">Conta</a></li>
+          <li><a href="https://media.netflix.com/" target="_blank" rel="noopener noreferrer">Media Center</a></li>
+          <li><a href="https://jobs.netflix.com/jobs" target="_blank" rel="noopener noreferrer">Carreiras</a></li>
+          <li><a href="https://www.netflix.com/redeem" target="_blank" rel="noopener noreferrer">Resgatar cartão pré-pago</a></li>
+          <li><a href="https://www.netflix.com/gift-cards" target="_blank" rel="noopener noreferrer">Comprar cartão pré-pago</a></li>
+          <li><a href="https://www.netflix.com/watch" target="_blank" rel="noopener noreferrer">Formas de assistir</a></li>
+          <li><a href="https://help.netflix.com/legal/termsofuse" target="_blank" rel="noopener noreferrer">Termos de uso</a></li>
+          <li><a href="https://help.netflix.com/legal/privacy" target="_blank" rel="noopener noreferrer">Privacidade</a></li>
+          <li><a href="#projeto">Sobre este projeto</a></li>
+          <li><a href="https://help.netflix.com/legal/corpinfo" target="_blank" rel="noopener noreferrer">Informações corporativas</a></li>
+          <li><a href="https://help.netflix.com/contactus" target="_blank" rel="noopener noreferrer">Entre em contato</a></li>
+          <li><a href="https://fast.com" target="_blank" rel="noopener noreferrer">Teste de velocidade</a></li>
+          <li><a href="https://help.netflix.com/legal/notices" target="_blank" rel="noopener noreferrer">Avisos legais</a></li>
+          <li><a href="https://www.netflix.com/br/browse/genre/839338" target="_blank" rel="noopener noreferrer">Só na Netflix</a></li>
+      </ul></nav><label class="language-picker" for="footer-language"><span class="sr-only">Idioma da página</span><svg class="icon language-icon" aria-hidden="true"><use href="#icon-language"/></svg><select id="footer-language" aria-label="Idioma da página"><option value="pt-BR">Português</option></select><svg class="icon language-chevron" aria-hidden="true"><use href="#icon-down"/></svg></label><p class="footer-country">Netflix Brasil</p><div class="study-notice" id="projeto"><strong>Projeto de estudo independente.</strong><p>Reprodução de interface para aprender HTML, CSS e JavaScript. Sem vínculo com a Netflix, criação de contas ou processamento de pagamentos. Marca e imagens pertencem aos respectivos titulares.</p><p>Os links externos abrem páginas oficiais em outra aba. Idioma disponível nesta base: português.</p></div></footer>
+</body>
+</html>

@@ -1,0 +1,39 @@
+/* border-box inclui borda e padding na largura declarada, evitando transbordamentos. */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 24px; }
+body { margin: 0; background: var(--color-background); color: var(--color-text); font: var(--font-size-body)/1.5 var(--font-family); }
+h1, h2, h3, p, figure { margin: 0; }
+button, input, select { font: inherit; }
+button, select { cursor: pointer; }
+button { color: inherit; }
+button:disabled { cursor: default; }
+a { color: inherit; text-underline-offset: 3px; }
+img, svg { display: block; max-width: 100%; }
+ul, ol { margin: 0; padding: 0; }
+[hidden] { display: none !important; }
+::selection { color: #fff; background: #a90b15; }
+:focus-visible { outline: 3px solid var(--color-focus); outline-offset: 4px; }
+/* min limita a largura no desktop; calc preserva margens em telas estreitas. */
+.container { width: min(calc(100% - var(--page-gutter) * 2), var(--container-width)); margin-inline: auto; }
+.content-section { margin-top: var(--space-5); }
+.section-title { margin-bottom: var(--space-2); font-size: 1.5rem; line-height: 1.25; font-weight: 700; }
+.button { display: inline-flex; justify-content: center; align-items: center; gap: 12px; padding: 12px 20px; min-height: 44px; border: 0; border-radius: var(--radius-control); font-weight: 700; line-height: 1.2; text-decoration: none; }
+.button-red { background: var(--color-primary); color: #fff; transition: background-color .18s; }
+.button-red:hover { background: var(--color-primary-hover); }
+.button-red:disabled { background: #84252b; color: #ddd; }
+.icon { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; flex: 0 0 24px; }
+.svg-defs { position: absolute; width: 0; height: 0; overflow: hidden; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; white-space: nowrap; clip-path: inset(50%); padding: 0; border: 0; }
+.skip-link { position: fixed; top: 12px; left: 12px; z-index: 100; padding: 10px 16px; background: #fff; color: #000; transform: translateY(-180%); }
+.skip-link:focus { transform: translateY(0); outline-color: var(--color-primary); }
+@media (min-width: 768px) { .content-section { margin-top: 64px; }.section-title { font-size: 1.625rem; } }
+/* A preferência se aplica a rolagem e transições, inclusive às acionadas pelo usuário. */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+}
+@media (forced-colors: active) {
+  .button, input, select, .reason-card { border: 1px solid ButtonText; }
+  :focus-visible { outline-color: Highlight; }
+  .ranking { -webkit-text-stroke: 0 !important; color: CanvasText !important; }
+}

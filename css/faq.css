@@ -1,0 +1,18 @@
+.faq-list { display: grid; gap: 8px; }
+.faq-item h3 { font-size: inherit; font-weight: 400; }
+.faq-trigger { display: flex; justify-content: space-between; align-items: center; gap: 20px; width: 100%; min-height: 76px; padding: 22px 24px; text-align: left; background: var(--color-surface); color: #fff; border: 0; font-size: 1.125rem; font-weight: 400; }
+.faq-trigger:hover { background: var(--color-surface-hover); }
+.faq-trigger:disabled { opacity: 1; background: var(--color-surface); }
+.faq-icon { position: relative; flex: 0 0 24px; width: 24px; height: 24px; transition: transform .2s ease; }
+.faq-icon::before, .faq-icon::after { content: ''; position: absolute; top: 11px; left: 0; width: 24px; height: 2px; background: currentColor; }
+.faq-icon::after { transform: rotate(90deg); }
+.faq-trigger[aria-expanded='true'] .faq-icon { transform: rotate(45deg); }
+/* Sem a classe adicionada pelo JS, a resposta permanece aberta e legível. */
+.faq-panel { display: grid; grid-template-rows: 1fr; }
+.faq-answer { min-height: 0; overflow: hidden; }
+.faq-answer-content { margin-top: 1px; padding: 24px; background: var(--color-surface); font-size: 1.125rem; }
+/* A linha do Grid pode transicionar entre 0fr e 1fr sem adivinhar um max-height. */
+.faq-ready .faq-panel { grid-template-rows: 0fr; visibility: hidden; transition: grid-template-rows .23s ease, visibility .23s; }
+.faq-ready .faq-item.aberto .faq-panel { grid-template-rows: 1fr; visibility: visible; }
+.faq-note { color: var(--color-muted); font-size: .875rem; margin-top: 16px; }
+@media (min-width: 768px) { .faq-trigger { font-size: 1.5rem; min-height: 84px; }.faq-answer-content { font-size: 1.375rem; }.faq-icon { width: 32px; height: 32px; flex-basis: 32px; }.faq-icon::before, .faq-icon::after { width: 32px; top: 15px; } }

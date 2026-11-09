@@ -1,0 +1,32 @@
+/* Tokens: um nome descreve a função da cor ou medida, evitando números repetidos. */
+:root {
+  color-scheme: dark;
+  --color-background: #000;
+  --color-text: #fff;
+  --color-muted: #b8b8bd;
+  --color-primary: #e50914;
+  --color-primary-hover: #c11119;
+  --color-surface: #2d2d2d;
+  --color-surface-hover: #414141;
+  --color-input: rgb(16 16 16 / 85%);
+  --color-input-border: #858585;
+  --color-error: #ff7880;
+  --color-success: #8be0b1;
+  --color-focus: #fff;
+  --font-family: Arial, Helvetica, system-ui, sans-serif;
+  --font-size-small: .875rem;
+  --font-size-body: 1rem;
+  --space-1: .5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2rem;
+  --space-5: 3rem;
+  --space-6: 4rem;
+  --container-width: 1160px;
+  --page-gutter: 24px;
+  --radius-control: 4px;
+  --radius-card: 16px;
+}
+/* Só a margem lateral muda aqui; cada componente gerencia suas próprias colunas. */
+@media (min-width: 768px) { :root { --page-gutter: 40px; } }
+@media (min-width: 1280px) { :root { --page-gutter: 64px; } }
